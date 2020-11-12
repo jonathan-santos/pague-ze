@@ -28,3 +28,11 @@ textarea {
     font: 500 1.6rem 'Montserrat', sans-serif;
     color: var(--cor-texto-claro);
 }
+
+button {
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: color background-color opacity 0.5s 0.5s;
+}

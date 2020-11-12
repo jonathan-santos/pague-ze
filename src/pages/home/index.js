@@ -1,10 +1,13 @@
 import { useState } from "react"
 
+import HamburguerImg from '../../assets/img/hamburguer.svg'
+import ArrowImg from '../../assets/img/arrow.svg'
+
 import './style.css'
 
 function Home() {
-    const [user, setUser] = useState({ name: "Jonathan", money: 7729 })
-    const [yearEconomy, setYearEconomy] = useState([
+    const [user] = useState({ name: "Jonathan", money: 7729 })
+    const [yearEconomy] = useState([
         { month: "Fevereiro", value: "278" },
         { month: "Março", value: "-50" }
     ])
@@ -18,7 +21,7 @@ function Home() {
         <>
             <div className="topo">
                 <button className="menu-button">
-                    H
+                    <img src={HamburguerImg} alt='Ícone de menu' />
                 </button>
 
                 <p className='saudacao'>Bom dia, {user.name}!</p>
@@ -31,7 +34,7 @@ function Home() {
 
                 <div className="meses">
                     {yearEconomy.map(({ month }, i) => (
-                        <span onClick={() => onMonthClicked(i)} key={i} className={i == selectedMonth ? 'selecionado' : ''}>{month}</span>
+                        <button onClick={() => onMonthClicked(i)} key={i} className={i === selectedMonth ? 'selecionado' : ''}>{month}</button>
                     ))}
                 </div>
             </div>
@@ -44,7 +47,9 @@ function Home() {
                 <div className='boletos'>
                     <h2 className="titulo">Meus boletos</h2>
 
-                    <button className='botao-expandir'>V</button>
+                    <button className='botao-expandir'>
+                        <img src={ArrowImg} alt='Ícone de seta' />
+                    </button>
                 </div>
 
                 <div className='pagar'>
