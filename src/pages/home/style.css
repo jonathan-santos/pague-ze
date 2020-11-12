@@ -1,0 +1,94 @@
+.topo {
+    padding: 1.6rem 1.6rem 1rem 1.6rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+}
+
+.menu-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.6rem;
+    border: 0.5px solid white;
+    background-color: transparent;
+}
+
+    .menu-button img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+.saudacao {
+    font-size: 2.4rem;
+}
+
+.subtitulo {
+    margin-top: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.dinheiro {
+    border-bottom: 0.2rem solid var(--cor-texto-claro);
+    padding-bottom: 0.2rem;
+    font-size: 4.8rem;
+}
+
+.meses {
+    margin-top: 0.4rem;
+}
+
+    .meses > * {
+        margin-right: 1.6rem;
+        font-size: 1.2rem;
+    }
+
+    .meses .selecionado {
+        border-bottom: 0.2rem solid var(--cor-texto-claro);
+    }
+
+.economia {
+    padding: 2.4rem;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    background-color: var(--cor-principal-escuro);
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.fundo {
+    padding: 2.4rem 1.6rem;
+}
+
+.boletos {
+    border: 0.4rem solid var(--cor-fundo-semi-escuro);
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+}
+
+    .boletos .titulo {
+        margin-bottom: 1.6rem;
+        color: var(--cor-principal-escuro);
+        font-size: 2.8rem;
+        font-weight: normal;
+    }
+
+    .boletos .botao-expandir {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 0;
+        border-radius: 100%;
+        align-self: center;
+        background-color: #C4C4C4;
+    }
+
+.pagar {
+    margin-top: 1.6rem;
+    padding: 1.8rem;
+    border-radius: 0.8rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    font-size: 3.2rem;
+    text-align: center;
+}

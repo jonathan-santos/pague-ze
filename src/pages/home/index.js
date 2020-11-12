@@ -1,31 +1,55 @@
+import { useState } from "react"
+
+import './style.css'
+
 function Home() {
+    const [user, setUser] = useState({ name: "Jonathan", money: 7729 })
+    const [yearEconomy, setYearEconomy] = useState([
+        { month: "Fevereiro", value: "278" },
+        { month: "Março", value: "-50" }
+    ])
+    const [selectedMonth, setSelectedMonth] = useState(0)
+
+    const onMonthClicked = (index) => {
+        setSelectedMonth(index)
+    }
+
     return (
         <>
-            <button class='menu-button'>H</button>
+            <div className="topo">
+                <button className="menu-button">
+                    H
+                </button>
 
-            <p>Bom dia, Jonathan</p>
+                <p className='saudacao'>Bom dia, {user.name}!</p>
 
-            <p>Meu dinheiro</p>
+                <p className='subtitulo'>Meu dinheiro</p>
 
-            <p>R$ 7729</p>
+                <p className='dinheiro'>R$ {user.money}</p>
 
-            <p>Quanto economizei?</p>
+                <p className='subtitulo'>Quanto economizei?</p>
 
-            <div>
-                <span>Fevereiro</span>
-                <span>Março</span>
+                <div className="meses">
+                    {yearEconomy.map(({ month }, i) => (
+                        <span onClick={() => onMonthClicked(i)} key={i} className={i == selectedMonth ? 'selecionado' : ''}>{month}</span>
+                    ))}
+                </div>
             </div>
 
-            <div>
-                Economia de +278
+            <div className='economia' style={{ color: yearEconomy[selectedMonth].value > 0 ? 'var(--cor-positivo)' : 'var(--cor-negativo)' }}>
+                Economia de {yearEconomy[selectedMonth].value > 0 ? '+' : ''}{yearEconomy[selectedMonth].value}
             </div>
 
-            <div>
-                Meus boletos
-            </div>
+            <div className="fundo">
+                <div className='boletos'>
+                    <h2 className="titulo">Meus boletos</h2>
 
-            <div>
-                Pagar
+                    <button className='botao-expandir'>V</button>
+                </div>
+
+                <div className='pagar'>
+                    Pagar
+                </div>
             </div>
         </>
     )
