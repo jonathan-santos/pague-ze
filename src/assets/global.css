@@ -24,7 +24,8 @@ body {
 body,
 input,
 button,
-textarea {
+textarea,
+a {
     font: 500 1.6rem 'Montserrat', sans-serif;
     color: var(--cor-texto-claro);
 }

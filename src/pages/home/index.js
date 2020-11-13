@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom'
 
 import HamburguerImg from '../../assets/img/hamburguer.svg'
 import ArrowImg from '../../assets/img/arrow.svg'
@@ -57,10 +58,10 @@ function Home() {
                     Pagar
                 </div>
 
-                <div className='falar-com-o-ze'>
+                <Link to='/ze' className='falar-com-o-ze'>
                     <span className='texto'>Falar com o Zé</span>
                     <img src={ZeImg} alt='Zé' />
-                </div>
+                </Link>
             </div>
         </>
     )
