@@ -18,7 +18,7 @@ function Chatbot() {
         setTimeout(() => {
             setMessages([
                 { sender: 'ze', text: 'Opa! Tudo bem?', time: '10:00' },
-                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: '10:00' }
+                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: '10:00' },
             ])
         }, 500)
     }, [])

@@ -23,8 +23,10 @@
     }
 
 .pagina-ze .mensagens {
+    height: calc(100vh - 9.5rem);
     padding: 1.6rem;
     background-color: var(--cor-fundo-semi-escuro);
+    overflow: scroll;
     display: flex;
     align-items: baseline;
     flex-direction: column;
