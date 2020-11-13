@@ -1,0 +1,118 @@
+.pagina-ze {
+    height: 100vh;
+    background-color: var(--cor-fundo-semi-escuro);
+}
+
+.pagina-ze .topo {
+    padding: 0.4rem 1.6rem;
+    background-color: var(--cor-principal);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .pagina-ze .topo .titulo {
+        font-size: 2.4rem;
+        font-weight: normal;
+    }
+
+    .pagina-ze .topo .ze {
+        width:  5rem;
+        height: 5rem;
+        border-radius: 100%;
+    }
+
+.pagina-ze .mensagens {
+    padding: 1.6rem;
+    background-color: var(--cor-fundo-semi-escuro);
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+    .pagina-ze .mensagem {
+        margin-bottom: 1.6rem;
+        border-radius: 1.2rem;
+        padding: 0.8rem;
+        display: flex;
+        color: var(--cor-texto-escuro);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    }
+    
+        .pagina-ze .mensagem > * {
+            margin-right: 0.6rem;
+        }
+
+        .pagina-ze .mensagem .hora {
+            font-size: 1.2rem;
+            opacity: 0.5;
+            align-self: flex-end;
+        }
+    
+        .pagina-ze .mensagem.ze {
+            background-color: var(--cor-principal);
+            align-self: flex-start;
+        }
+
+        .pagina-ze .mensagem.ze:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -1.15rem;
+            border-top: 1.2rem solid var(--cor-principal);
+            border-left: 1.2rem solid transparent;
+            border-right: 1.2rem solid transparent;
+        }
+        
+        .pagina-ze .mensagem.usuario {
+            flex-direction: row-reverse;
+            background-color: var(--cor-fundo-claro);
+            align-self: flex-end;
+        }
+
+        .pagina-ze .mensagem.usuario:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -1.15rem;
+            border-top: 1.2rem solid var(--cor-fundo-claro);
+            border-left: 1.2rem solid transparent;
+            border-right: 1.2rem solid transparent;
+        }
+        
+.pagina-ze .fundo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--cor-principal);
+    display: flex;
+    align-items: center;
+}
+
+    .pagina-ze .fundo input {
+        width: 100%;
+        height: 4.2rem;
+        border: 0.4rem solid var(--cor-fundo-semi-escuro);
+        border-radius: 2.4rem;
+        padding: 0.8rem 4rem 0.8rem 0.8rem;
+        color: var(--cor-texto-escuro);
+        outline: none;
+    }
+
+    .pagina-ze .fundo button {
+        position: absolute;
+        right: calc(0.8rem + 0rem + 0.2rem);
+        width: 3.9rem;
+        height: 3.9rem;
+        padding: 0.8rem;
+        border-radius: 100%;
+        background-color: var(--cor-principal-escuro);
+    }
+
+        .pagina-ze .fundo button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;   
+        }

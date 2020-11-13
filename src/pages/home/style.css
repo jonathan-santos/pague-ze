@@ -1,10 +1,10 @@
-.topo {
+.pagina-home .topo {
     padding: 1.6rem 1.6rem 1rem 1.6rem;
     background-color: var(--cor-principal);
     color: var(--cor-texto-claro);
 }
 
-.menu-button {
+.botao-menu {
     width: 2.5rem;
     height: 2.5rem;
     margin-bottom: 1.6rem;
@@ -12,45 +12,45 @@
     align-items: center;
 }
 
-    .menu-button img {
+    .botao-menu img {
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
 
-    .menu-button:hover {
+    .botao-menu:hover {
         opacity: 0.5;
     }
 
-.saudacao {
+.pagina-home .saudacao {
     font-size: 2.4rem;
 }
 
-.subtitulo {
+.pagina-home .subtitulo {
     margin-top: 0.4rem;
     font-size: 1.4rem;
 }
 
-.dinheiro {
+.pagina-home  .dinheiro {
     border-bottom: 0.2rem solid var(--cor-texto-claro);
     padding-bottom: 0.2rem;
     font-size: 4.8rem;
 }
 
-.meses {
+.pagina-home .meses {
     margin-top: 0.4rem;
 }
 
-    .meses > * {
+    .pagina-home .meses > * {
         margin-right: 1.6rem;
         font-size: 1.2rem;
     }
 
-    .meses .selecionado {
+    .pagina-home .meses .selecionado {
         border-bottom: 0.2rem solid var(--cor-texto-claro);
     }
 
-.economia {
+.pagina-home .economia {
     padding: 2.4rem;
     border-bottom-left-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
@@ -59,11 +59,11 @@
     text-align: center;
 }
 
-.fundo {
+.pagina-home .fundo {
     padding: 2.4rem 1.6rem;
 }
 
-.boletos {
+.pagina-home boletos {
     border: 0.4rem solid var(--cor-fundo-semi-escuro);
     padding: 0.8rem;
     display: flex;
@@ -71,14 +71,14 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
 }
 
-    .boletos .titulo {
+    .pagina-home .boletos .titulo {
         margin-bottom: 1.6rem;
         color: var(--cor-principal-escuro);
         font-size: 2.8rem;
         font-weight: normal;
     }
 
-    .boletos .botao-expandir {
+    .pagina-home .boletos .botao-expandir {
         width: 2.5rem;
         height: 2.5rem;
         border: 0;
@@ -87,7 +87,7 @@
         background-color: #C4C4C4;
     }
 
-.pagar {
+.pagina-home .pagar {
     margin-top: 1.6rem;
     padding: 1.8rem;
     border-radius: 0.8rem;
@@ -97,7 +97,7 @@
     text-align: center;
 }
 
-.falar-com-o-ze {
+.pagina-home .falar-com-o-ze {
     margin-top: 2.4rem;
     display: flex;
     align-items: center;
@@ -105,14 +105,14 @@
     text-decoration: none;
 }
 
-    .falar-com-o-ze .texto {
+    .pagina-home .falar-com-o-ze .texto {
         padding: 1.8rem 3.6rem 1.8rem 1.8rem;
         border-radius: 1.8rem;
         background-color: var(--cor-principal-escuro);
         font-size: 2.4rem;
     }
 
-    .falar-com-o-ze img {
+    .pagina-home .falar-com-o-ze img {
         margin-left: -2.8rem;
         border-radius: 100%;
     }

@@ -20,9 +20,9 @@ function Home() {
     }
 
     return (
-        <>
+        <div className='pagina-home'>
             <div className="topo">
-                <button className="menu-button">
+                <button className="botao-menu">
                     <img src={HamburguerImg} alt='Ícone de menu' />
                 </button>
 
@@ -63,7 +63,7 @@ function Home() {
                     <img src={ZeImg} alt='Zé' />
                 </Link>
             </div>
-        </>
+        </div>
     )
 }
 
