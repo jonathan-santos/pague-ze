@@ -2,6 +2,7 @@ import { useState } from "react"
 
 import HamburguerImg from '../../assets/img/hamburguer.svg'
 import ArrowImg from '../../assets/img/arrow.svg'
+import ZeImg from '../../assets/img/ze.jpg'
 
 import './style.css'
 
@@ -54,6 +55,11 @@ function Home() {
 
                 <div className='pagar'>
                     Pagar
+                </div>
+
+                <div className='falar-com-o-ze'>
+                    <span className='texto'>Falar com o Zé</span>
+                    <img src={ZeImg} alt='Zé' />
                 </div>
             </div>
         </>
