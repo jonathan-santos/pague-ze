@@ -5,7 +5,6 @@ import { getChatbotAnswer } from '../../repo/chatbotRepo'
 
 import HouseImg from '../../assets/img/house.svg'
 import ZeImg from '../../assets/img/ze.jpg'
-import MicrophoneImg from '../../assets/img/microphone.svg'
 import ArrowImg from '../../assets/img/arrow.svg'
 
 import './style.css'
@@ -16,9 +15,11 @@ function Chatbot() {
 
     useEffect(() => {
         setTimeout(() => {
+            const now = new Date()
+            const nowStr = `${now.getHours()}:${now.getMinutes()}`
             setMessages([
-                { sender: 'ze', text: 'Opa! Tudo bem?', time: '10:00' },
-                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: '10:00' },
+                { sender: 'ze', text: 'Opa! Tudo bem?', time: nowStr },
+                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: nowStr },
             ])
         }, 500)
     }, [])
@@ -32,10 +33,14 @@ function Chatbot() {
 
         try {
             const answer = await getChatbotAnswer(inputText)
+
+            const now = new Date()
+            const nowStr = `${now.getHours()}:${now.getMinutes()}`
+            
             setMessages([
                 ...messages,
-                { sender: 'user', text: inputText, time: '10:00' },
-                { sender: 'ze', text: answer, time: '10:00' }
+                { sender: 'user', text: inputText, time: nowStr },
+                { sender: 'ze', text: answer, time: nowStr }
             ])
 
             setInputText('')
@@ -74,7 +79,6 @@ function Chatbot() {
                 />
 
                 <button type='submit'>
-                    {/* <img src={MicrophoneImg} alt='microfone' /> */}
                     <img className='seta' src={ArrowImg} alt='seta' />
                 </button>
             </form>
