@@ -63,7 +63,7 @@
     padding: 2.4rem 1.6rem;
 }
 
-.pagina-home boletos {
+.pagina-home .boletos {
     border: 0.4rem solid var(--cor-fundo-semi-escuro);
     padding: 0.8rem;
     display: flex;
