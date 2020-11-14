@@ -96,23 +96,3 @@
     font-size: 3.2rem;
     text-align: center;
 }
-
-.pagina-home .falar-com-o-ze {
-    margin-top: 2.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-    .pagina-home .falar-com-o-ze .texto {
-        padding: 1.8rem 3.6rem 1.8rem 1.8rem;
-        border-radius: 1.8rem;
-        background-color: var(--cor-principal-escuro);
-        font-size: 2.4rem;
-    }
-
-    .pagina-home .falar-com-o-ze img {
-        margin-left: -2.8rem;
-        border-radius: 100%;
-    }

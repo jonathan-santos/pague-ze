@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
+import Header from '../../components/header'
 import { getContacts } from '../../repo/contactRepo'
 
-import BackArrowImg from '../../assets/img/backArrow.svg'
 import ContactArrowImg from '../../assets/img/contactArrow.svg'
 
 import './style.css'
@@ -20,16 +21,10 @@ function Contacts({ history }) {
     
     return (
         <div className='pagina-contatos'>
-            <header>
-                <button className='voltar' onClick={() => history.goBack()}>
-                    <img src={BackArrowImg} alt='Ícone de seta' /> Voltar
-                </button>
-
-                <h1 className='titulo'>Meus contatos</h1>
-            </header>
+            <Header history={history} title='Contatos' />
 
             {contacts.map((contact, i) => (
-                <div key={i} className={`contato ${i % 2 == 0 ? "par" : ""}`}>
+                <Link to={`/contato/${contact.id.value}`} key={i} className={`contato ${i % 2 !== 0 ? "impar" : ""}`}>
                     <img className='foto' src={contact.picture.thumbnail} alt={`Foto de ${contact.name.first} ${contact.name.last}`}/>
 
                     <div className="informacoes">
@@ -39,7 +34,7 @@ function Contacts({ history }) {
                     </div>
 
                     <img className='seta' src={ContactArrowImg} alt="Seta" />
-                </div>
+                </Link>
             ))}
         </div>
     )

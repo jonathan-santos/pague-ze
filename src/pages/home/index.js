@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
+import TalkToChatbot from '../../components/talkToChatbot'
 import { getProfile } from '../../repo/profileRepo'
 
 import HamburguerImg from '../../assets/img/hamburguer.svg'
 import ArrowImg from '../../assets/img/arrow.svg'
-import ZeImg from '../../assets/img/ze.jpg'
 
 import './style.css'
 
@@ -71,10 +71,7 @@ function Home() {
                     Pagar
                 </div>
 
-                <Link to='/ze' className='falar-com-o-ze'>
-                    <span className='texto'>Falar com o Zé</span>
-                    <img src={ZeImg} alt='Zé' />
-                </Link>
+                <TalkToChatbot />
             </div>
         </div>
     )

@@ -1,0 +1,33 @@
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 6.4rem;
+    margin-bottom: 2.4rem;
+    background-color: var(--cor-fundo-claro);
+    padding: 0.4rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.header .voltar {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--cor-principal);
+    display: flex;
+    align-items: center;
+}
+
+    .header img {
+        margin-right: 0.8rem;
+    }
+
+.header .titulo {
+    display: inline;
+    font-size: 2.4rem;
+    font-weight: bolder;
+    color: var(--cor-principal);
+    align-self: flex-end;
+}

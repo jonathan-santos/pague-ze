@@ -74,7 +74,7 @@ function Register() {
 
                 <p>ou</p>
 
-                <Link to='/login'>Entrar na sua conta</Link>
+                <Link to='/entrar'>Entrar na sua conta</Link>
             </form>
         </div>
     )

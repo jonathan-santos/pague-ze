@@ -59,7 +59,7 @@ function Login() {
 
                 <p>ou</p>
 
-                <Link to='/register'>Registre uma conta</Link>
+                <Link to='/registrar'>Registre uma conta</Link>
             </form>
         </div>
     )

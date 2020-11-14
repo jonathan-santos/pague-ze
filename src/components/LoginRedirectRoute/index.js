@@ -6,7 +6,7 @@ function LoginRedirectRoute(props) {
     if (oAuthToken)
         return <Route {...props} />
     else
-        return <Redirect to='/login' />
+        return <Redirect to='/entrar' />
 }
 
 export default LoginRedirectRoute
