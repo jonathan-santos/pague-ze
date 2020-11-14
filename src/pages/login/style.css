@@ -1,1 +1,46 @@
+.pagina-login {
+    height: 100vh;
+    padding: 2.4rem 0;
+    background-color: var(--cor-fundo-semi-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.pagina-login form {
+    width: 90%;
+    padding: 1.6rem;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+}
+
+    .pagina-login form .titulo {
+        margin-bottom: 2.4rem;
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    .pagina-login form label {
+        margin-bottom: 0.8rem;
+        display: block;
+        font-size: 1.8rem;
+    }
+
+    .pagina-login form input {
+        width: 100%;
+        height: 4.8rem;
+        margin-bottom: 0.8rem;
+        border: 0.4rem solid var(--cor-fundo-semi-escuro);
+        border-radius: 0.4rem;
+        padding: 0.4rem 0.8rem;
+        color: var(--cor-texto-escuro);
+    }
+
+    .pagina-login form button {
+        display: block;
+        margin: 0 auto;
+        border-radius: 1.2rem;
+        padding: 1.6rem;
+        background-color: var(--cor-principal);
+        font-size: 2.2rem;
+    }
