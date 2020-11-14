@@ -24,13 +24,13 @@ function Contacts({ history }) {
             <Header history={history} title='Contatos' />
 
             {contacts.map((contact, i) => (
-                <Link to={`/contato/${contact.id.value}`} key={i} className={`contato ${i % 2 !== 0 ? "impar" : ""}`}>
-                    <img className='foto' src={contact.picture.thumbnail} alt={`Foto de ${contact.name.first} ${contact.name.last}`}/>
+                <Link to={`/contato/${contact.id}`} key={i} className={`contato ${i % 2 !== 0 ? "impar" : ""}`}>
+                    <img className='foto' src={contact.photo} alt={`Foto de ${contact.name.first} ${contact.name.last}`}/>
 
                     <div className="informacoes">
-                        <p className='nome'>{`${contact.name.first} ${contact.name.last}`}</p>
+                        <p className='nome'>{`${contact.name.first} ${contact.name}`}</p>
 
-                        <p className='descricao'>Alguma coisa, alguma coisa</p>
+                        <p className='descricao'>{contact.description}</p>
                     </div>
 
                     <img className='seta' src={ContactArrowImg} alt="Seta" />
