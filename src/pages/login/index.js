@@ -1,31 +1,39 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useState } from "react"
+import { useHistory } from "react-router-dom"
 
-import './style.css'
+import { getToken } from "../../repo/authRepo"
+
+import "./style.css"
 
 function Login() {
     const history = useHistory()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-    const handleFormSubmit = e => {
+    const handleFormSubmit = async e => {
         e.preventDefault()
 
-        localStorage.setItem('oAuthToken', 'POTATO')
-        history.push('/')
+        try {
+            const token = await getToken(email, password)
+            localStorage.setItem("token", token)
+            history.push("/")
+        } catch (error) {
+            console.log(`error: ${error}`)
+            alert("Houve um erro entrando na sua conta \nTente novamente")
+        }
     }
 
     return (
-        <div className='pagina-login'>
+        <div className="pagina-login">
             <form onSubmit={handleFormSubmit}>
-                <h1 className='titulo'>Login</h1>
+                <h1 className="titulo">Entrar na sua conta</h1>
 
                 <div className="input">
                     <label htmlFor="email">Email:</label>
 
                     <input
-                        id='email'
-                        name='email'
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="seuemail@email.com.br"
                         required
@@ -38,8 +46,8 @@ function Login() {
                     <label htmlFor="password">Password:</label>
 
                     <input
-                        id='password'
-                        name='password'
+                        id="password"
+                        name="password"
                         type="password"
                         required
                         value={password}
@@ -47,7 +55,7 @@ function Login() {
                     />
                 </div>
 
-                <button type="submit">Fazer login</button>
+                <button type="submit">Entrar</button>
             </form>
         </div>
     )

@@ -4,6 +4,7 @@ const getChatbotAnswer = async (message) => {
     const res = await fetch(`${endpoint}/messages`, {
         method: 'POST',
         headers: {
+            'authorization': `Bearer ${localStorage.getItem('token')}`,
             'content-type': 'application/json'
         },
         body: JSON.stringify({
