@@ -26,7 +26,7 @@ function Login() {
                     <input
                         id='email'
                         name='email'
-                        type="text"
+                        type="email"
                         placeholder="seuemail@email.com.br"
                         required
                         value={email} 

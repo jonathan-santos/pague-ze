@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { getChatbotAnswer } from '../../repo/chatbotRepo'
@@ -12,6 +12,7 @@ import './style.css'
 function Chatbot() {
     const [messages, setMessages] = useState([])
     const [inputText, setInputText] = useState('')
+    const bottomOfMessagesRef = useRef(null)
 
     useEffect(() => {
         setTimeout(() => {
@@ -19,8 +20,10 @@ function Chatbot() {
             const nowStr = `${now.getHours()}:${now.getMinutes()}`
             setMessages([
                 { sender: 'ze', text: 'Opa! Tudo bem?', time: nowStr },
-                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: nowStr },
+                { sender: 'ze', text: 'Que que eu posso te ajudar?', time: nowStr }
             ])
+
+            bottomOfMessagesRef.current.scrollIntoView()
         }, 500)
     }, [])
 
@@ -44,6 +47,8 @@ function Chatbot() {
             ])
 
             setInputText('')
+
+            bottomOfMessagesRef.current.scrollIntoView()
         } catch (error) {
             alert('Houve um problema falando com o Seu Zé \nTenta de novo')
         }
@@ -68,6 +73,8 @@ function Chatbot() {
                         <span className="hora">{message.time}</span>
                     </div>
                 ))}
+
+                <div ref={bottomOfMessagesRef}></div>
             </div>
 
             <form className="fundo" onSubmit={handleSendText}>

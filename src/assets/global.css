@@ -18,6 +18,10 @@
     text-rendering: optimizeLegibility;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--cor-fundo-claro);
 }
