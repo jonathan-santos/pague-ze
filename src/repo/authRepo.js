@@ -1,7 +1,7 @@
-const endpoint = 'https://pague-ze.herokuapp.com/auth'
+const endpoint = 'https://pague-ze.herokuapp.com'
 
 const getToken = async (email, password) => {
-    const res = await fetch(`${endpoint}/login`, {
+    const res = await fetch(`${endpoint}/auth/login`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -19,8 +19,24 @@ const getToken = async (email, password) => {
     return answer.access_token
 }
 
-const register = async (email, password) => {
-    return null
+const register = async (username, email, password) => {
+    const res = await fetch(`${endpoint}/users/register`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            username,
+            email,
+            password
+        })
+    })
+
+    if (!res.ok)
+        throw new Error()
+
+    const token = await getToken(email, password)
+    return token
 }
 
 export {

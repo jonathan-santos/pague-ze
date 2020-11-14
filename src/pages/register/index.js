@@ -7,6 +7,7 @@ import "../login/style.css"
 
 function Register() {
     const history = useHistory()
+    const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -14,6 +15,8 @@ function Register() {
         e.preventDefault()
 
         try {
+            const token = await register(username, email, password)
+            localStorage.setItem("token", token)
             history.push("/")
         } catch (error) {
             console.log(`error: ${error}`)
@@ -25,6 +28,20 @@ function Register() {
         <div className="pagina-autenticacao">
             <form onSubmit={handleFormSubmit}>
                 <h1 className="titulo">Crie a sua conta</h1>
+
+                <div className="input">
+                    <label htmlFor="username">Nome de usuário:</label>
+
+                    <input
+                        id="username"
+                        name="username"
+                        type="username"
+                        placeholder="Seu Zé"
+                        required
+                        value={username} 
+                        onChange={e => setUsername(e.target.value)}
+                    />
+                </div>
 
                 <div className="input">
                     <label htmlFor="email">Email:</label>
