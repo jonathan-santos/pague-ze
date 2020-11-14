@@ -1,4 +1,4 @@
-.pagina-login {
+.pagina-autenticacao {
     height: 100vh;
     padding: 2.4rem 0;
     background-color: var(--cor-fundo-semi-escuro);
@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-.pagina-login form {
+.pagina-autenticacao form {
     width: 90%;
     border-radius: 0.8rem;
     padding: 1.6rem;
@@ -15,19 +15,19 @@
     color: var(--cor-texto-escuro);
 }
 
-    .pagina-login form .titulo {
+    .pagina-autenticacao form .titulo {
         margin-bottom: 2.4rem;
         font-size: 3.2rem;
         text-align: center;
     }
 
-    .pagina-login form label {
+    .pagina-autenticacao form label {
         margin-bottom: 0.8rem;
         display: block;
         font-size: 1.8rem;
     }
 
-    .pagina-login form input {
+    .pagina-autenticacao form input {
         width: 100%;
         height: 4.8rem;
         margin-bottom: 1.2rem;
@@ -37,11 +37,22 @@
         color: var(--cor-texto-escuro);
     }
 
-    .pagina-login form button {
+    .pagina-autenticacao form button {
         display: block;
         margin: 0 auto;
         border-radius: 1.6rem;
         padding: 1.6rem;
         background-color: var(--cor-principal);
         font-size: 2.2rem;
+    }
+
+    .pagina-autenticacao form p {
+        margin: 1.2rem 0;
+        text-align: center;
+    }
+
+    .pagina-autenticacao form a {
+        display: block;
+        color: var(--cor-texto-escuro);
+        text-align: center;
     }

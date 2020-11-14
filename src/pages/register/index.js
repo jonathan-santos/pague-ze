@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
-import { getToken } from "../../repo/authRepo"
+import { register } from "../../repo/authRepo"
 
-import "./style.css"
+import "../login/style.css"
 
-function Login() {
+function Register() {
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -14,19 +14,17 @@ function Login() {
         e.preventDefault()
 
         try {
-            const token = await getToken(email, password)
-            localStorage.setItem("token", token)
             history.push("/")
         } catch (error) {
             console.log(`error: ${error}`)
-            alert("Houve um erro entrando na sua conta \nTente novamente")
+            alert("Houve um erro criando a sua conta \nTente novamente")
         }
     }
 
     return (
         <div className="pagina-autenticacao">
             <form onSubmit={handleFormSubmit}>
-                <h1 className="titulo">Entrar na sua conta</h1>
+                <h1 className="titulo">Crie a sua conta</h1>
 
                 <div className="input">
                     <label htmlFor="email">Email:</label>
@@ -55,14 +53,14 @@ function Login() {
                     />
                 </div>
 
-                <button type="submit">Entrar</button>
+                <button type="submit">Criar conta</button>
 
                 <p>ou</p>
 
-                <Link to='/register'>Registre uma conta</Link>
+                <Link to='/login'>Entrar na sua conta</Link>
             </form>
         </div>
     )
 }
 
-export default Login
+export default Register

@@ -19,7 +19,11 @@ const getToken = async (email, password) => {
     return answer.access_token
 }
 
-export {
-    getToken
+const register = async (email, password) => {
+    return null
 }
 
+export {
+    getToken,
+    register
+}
