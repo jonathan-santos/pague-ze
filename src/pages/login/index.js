@@ -1,13 +1,18 @@
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import './style.css'
 
 function Login() {
+    const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const handleFormSubmit = e => {
         e.preventDefault()
+
+        localStorage.setItem('oAuthToken', 'POTATO')
+        history.push('/')
     }
 
     return (
