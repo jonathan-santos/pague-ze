@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Header from '../../components/header'
 import { getContacts } from '../../repo/contactRepo'
 
-import ContactArrowImg from '../../assets/img/contactArrow.svg'
+import ArrowImg from '../../assets/img/arrow.svg'
 
 import './style.css'
 
@@ -33,7 +33,7 @@ function Contacts({ history }) {
                         <p className='descricao'>{contact.description}</p>
                     </div>
 
-                    <img className='seta' src={ContactArrowImg} alt="Seta" />
+                    <img className='seta' src={ArrowImg} alt="Seta" />
                 </Link>
             ))}
         </div>

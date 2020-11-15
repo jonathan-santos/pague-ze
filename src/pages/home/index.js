@@ -5,7 +5,7 @@ import TalkToChatbot from '../../components/talkToChatbot'
 import { getProfile } from '../../repo/profileRepo'
 
 import HamburguerImg from '../../assets/img/hamburguer.svg'
-import ArrowImg from '../../assets/img/arrow.svg'
+import ExpandArrowImg from '../../assets/img/expandArrow.svg'
 
 import './style.css'
 
@@ -63,7 +63,7 @@ function Home() {
                     <h2 className="titulo">Meus boletos</h2>
 
                     <button className='botao-expandir'>
-                        <img src={ArrowImg} alt='Ícone de seta' />
+                        <img src={ExpandArrowImg} alt='Ícone de seta' />
                     </button>
                 </div>
 

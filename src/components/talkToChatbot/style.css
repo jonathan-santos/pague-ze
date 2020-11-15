@@ -17,3 +17,13 @@
         margin-left: -2.8rem;
         border-radius: 100%;
     }
+
+.falar-com-o-ze.min .texto {
+    display: none;
+}
+
+.falar-com-o-ze.min img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0;
+}

@@ -3,11 +3,12 @@
     position: sticky;
     top: 0;
     height: 6.4rem;
-    margin-bottom: 2.4rem;
     background-color: var(--cor-fundo-claro);
     padding: 0.4rem 1.2rem;
+    color: var(--cor-principal);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     z-index: 100;
 }
 
@@ -15,7 +16,6 @@
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
-    color: var(--cor-principal);
     display: flex;
     align-items: center;
 }
@@ -28,6 +28,30 @@
     display: inline;
     font-size: 2.4rem;
     font-weight: bolder;
-    color: var(--cor-principal);
     align-self: flex-end;
 }
+
+.header.alt {
+    height: 10rem;
+    padding: 1.6rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+    .header.alt .voltar img {
+        filter: grayscale(100%) brightness(5);
+    }
+
+    .header.alt .titulo {
+        align-self: flex-start;
+    }
+
+    .header.alt .falar-com-o-ze {
+        margin: 0;
+        height: 100%;
+        align-self: flex-end;
+    }
+    

@@ -1,0 +1,75 @@
+.pagina-seu-dinheiro .secoes {
+    color: var(--cor-texto-escuro);
+}
+
+.pagina-seu-dinheiro .secao input {
+    display: none;
+}
+
+.pagina-seu-dinheiro .secao .expandir {
+    border-top: 0.15rem solid #EEE;
+    border-bottom: 0.15rem solid #EEE;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+    .pagina-seu-dinheiro .secao:first-child .expandir {
+        border-top: 0.3rem solid #EEE;
+    }
+
+    .pagina-seu-dinheiro .secao:last-of-type .expandir {
+        border-bottom: 0.3rem solid #EEE;
+    }
+
+    .pagina-seu-dinheiro .secao .expandir .titulo {
+        font-weight: bold;
+    }
+
+    .pagina-seu-dinheiro .secao .expandir .valor {
+        margin-right: 1.6rem;
+        flex: 1;
+        text-align: end;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+        .pagina-seu-dinheiro .secao .expandir .valor.principal {
+            font-size: 2.8rem;
+            color: var(--cor-principal);
+        }
+    
+    .pagina-seu-dinheiro .secao .expandir .seta {
+        transform: rotate(90deg);
+    }
+
+.pagina-seu-dinheiro .secao input:checked ~ .detalhes {
+    display: block;
+}
+
+.pagina-seu-dinheiro .secao input:checked ~ .expandir .seta {
+    transform: rotate(270deg);
+}
+
+.pagina-seu-dinheiro .secao .detalhes {
+    display: none;
+}
+
+.pagina-seu-dinheiro .secao .detalhe  {
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagina-seu-dinheiro .botao-principal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.6rem;
+    background-color: var(--cor-principal);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
