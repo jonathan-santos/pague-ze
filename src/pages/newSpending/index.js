@@ -5,7 +5,7 @@ import TalkToChatbot from '../../components/talkToChatbot'
 
 import './style.css'
 
-function NewSpending() {
+function NewSpending({ history }) {
     const [date, setDate] = useState(undefined)
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
@@ -13,11 +13,12 @@ function NewSpending() {
     const handleFormSubmit = e => {
         e.preventDefault()
         console.log('SUBMIT')
+        history.goBack()
     }
 
     return (
         <div className='pagina-novo-gasto'>
-            <Header title='Novo gasto' alternativeStyle noChatbot />
+            <Header title='Novo gasto' history={history} alternativeStyle noChatbot />
 
             <div className="conteudo">
                 <form onSubmit={handleFormSubmit}>

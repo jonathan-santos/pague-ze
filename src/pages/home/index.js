@@ -35,13 +35,13 @@ function Home() {
     return (
         <div className='pagina-home'>
             <div className="topo">
-                <button className="botao-menu">
+                {/* <button className="botao-menu">
                     <img src={HamburguerImg} alt='Ícone de menu' />
-                </button>
+                </button> */}
 
                 <p className='saudacao'>Bom dia, {username}!</p>
 
-                <p className='subtitulo'>Meu dinheiro</p>
+                <p className='subtitulo' style={{ textAlign: 'end'}}>Meu dinheiro</p>
 
                 <p className='dinheiro'>R$ {financialState.money}</p>
 
@@ -67,9 +67,19 @@ function Home() {
                     </button>
                 </div>
 
-                <div className='pagar'>
-                    Pagar
+                <div className="pagamento">
+                    <Link to='/pagar' className='botao primario pagar'>
+                        Pagar
+                    </Link>
+
+                    <Link to='/depositar' className='botao secundario cobrar'>
+                        Depositar
+                    </Link>
                 </div>
+
+                <Link to='/novo-gasto' className='botao primario'>
+                    Cadastrar novo gasto
+                </Link>
 
                 <TalkToChatbot />
             </div>

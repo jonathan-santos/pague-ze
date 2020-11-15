@@ -22,7 +22,7 @@ function Finances({ history }) {
     
     return (
         <div className='pagina-seu-dinheiro'>
-            <Header history={history} title="Meu dinheiro" alternativeStyle />
+            <Header history={history} title="Meu dinheiro" goToHome alternativeStyle />
             
             <div className="secoes">
                 {financialState.map((financialData, i) => (

@@ -4,10 +4,17 @@ import TalkToChatbot from '../talkToChatbot'
 
 import './style.css'
 
-function Header({ history, title, alternativeStyle, noChatbot }) {
+function Header({ history, title, goToHome, alternativeStyle, noChatbot }) {
+    const handleButtonClick = () => {
+        if (!goToHome)
+            history.goBack()
+        else
+            history.push('/')
+    }
+
     return (
         <header className={`header ${alternativeStyle ? 'alt' : ''}`}>
-            <button className='voltar' onClick={() => history.goBack()}>
+            <button className='voltar' onClick={handleButtonClick}>
                 <img src={BackArrowImg} alt='Ícone de seta' /> Voltar
             </button>
 
