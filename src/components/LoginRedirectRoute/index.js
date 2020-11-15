@@ -6,8 +6,6 @@ import { checkToken } from '../../repo/authRepo'
 function LoginRedirectRoute(props) {
     useEffect(() => {
         checkToken().then(res => {
-            console.log(`res: ${res}`)
-
             if (!res)
                 localStorage.setItem('token', '')
         })

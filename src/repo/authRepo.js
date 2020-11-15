@@ -3,9 +3,6 @@ import { endpoint } from './base'
 const checkToken = async () => {
     const token = localStorage.getItem('token')
 
-    if (!token)
-        console.log('Token vazio')
-
     const { ok } = await fetch(`${endpoint}/token`, {
         headers: {
             'authorization': `Bearer ${token}`
@@ -44,7 +41,8 @@ const register = async (username, cpf, email, password) => {
             username,
             email,
             password,
-            identity: cpf
+            identity: cpf,
+            photo: 'https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png'
         })
     })
 

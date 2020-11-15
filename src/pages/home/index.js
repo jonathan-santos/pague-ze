@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom'
 import TalkToChatbot from '../../components/talkToChatbot'
 import { getProfile } from '../../repo/profileRepo'
 
-import HamburguerImg from '../../assets/img/hamburguer.svg'
-import ExpandArrowImg from '../../assets/img/expandArrow.svg'
-
 import './style.css'
 
-function Home() {
+function Home({ history }) {
     const [username, setUsername] = useState('')
-    const [financialState] = useState({
-        money: 7729,
+    const [financialState, setFinancialState] = useState({
+        money: '0.00',
         yearResume: [
-            { month: "Fevereiro", value: "278" },
-            { month: "Março", value: "-50" }
+            { month: "Novembro", value: "0.00" },
+            { month: "Outubro", value: "0.00" },
+            { month: "Setembro", value: "0.00" }
         ]
     })
     const [selectedMonth, setSelectedMonth] = useState(0)
@@ -23,10 +21,19 @@ function Home() {
     useEffect(() => {
         getProfile().then(res => {
             setUsername(res.username)
+            setFinancialState({
+                ...financialState,
+                money: res.account.balance
+            })
         }).catch(error => {
             alert('Houve um problema pegando os seus dados \nTente novamente')
         })
     }, [])
+
+    const handleClickSair = () => {
+        localStorage.setItem('token', '')
+        history.push('/inicio')
+    }
 
     const onMonthClicked = (index) => {
         setSelectedMonth(index)
@@ -35,11 +42,13 @@ function Home() {
     return (
         <div className='pagina-home'>
             <div className="topo">
-                {/* <button className="botao-menu">
-                    <img src={HamburguerImg} alt='Ícone de menu' />
-                </button> */}
+                <div className="conta">
+                    <p className='saudacao'>Bom dia, {username}!</p>
 
-                <p className='saudacao'>Bom dia, {username}!</p>
+                    <button className="botao-sair" onClick={handleClickSair}>
+                        Sair
+                    </button>
+                </div>
 
                 <p className='subtitulo' style={{ textAlign: 'end'}}>Meu dinheiro</p>
 
@@ -54,8 +63,8 @@ function Home() {
                 </div>
             </div>
 
-            <div className='economia' style={{ color: financialState.yearResume[selectedMonth].value > 0 ? 'var(--cor-positivo)' : 'var(--cor-negativo)' }}>
-                Economia de {financialState.yearResume[selectedMonth].value > 0 ? '+' : ''}{financialState.yearResume[selectedMonth].value}
+            <div className='economia' style={{ color: financialState.yearResume[selectedMonth].value >= 0 ? 'var(--cor-positivo)' : 'var(--cor-negativo)' }}>
+                Economia de R$ {financialState.yearResume[selectedMonth].value > 0 ? '+' : ''}{financialState.yearResume[selectedMonth].value}
             </div>
 
             <div className="fundo">

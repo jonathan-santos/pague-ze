@@ -4,26 +4,22 @@
     color: var(--cor-texto-claro);
 }
 
-.botao-menu {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-bottom: 1.6rem;
+.pagina-home .conta {
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-
-    .botao-menu img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .botao-menu:hover {
-        opacity: 0.5;
-    }
 
 .pagina-home .saudacao {
     font-size: 2.4rem;
+}
+
+.pagina-home .botao-sair {
+    border: 0.2rem solid var(--cor-texto-claro);
+    border-radius: 0.8rem;
+    padding: 0.8rem 1.6rem;
+    font-weight: 600;
 }
 
 .pagina-home .subtitulo {
