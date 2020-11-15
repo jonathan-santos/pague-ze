@@ -43,9 +43,9 @@ function Contact({ history }) {
 
                 <Route exact path='/contato/:id/pagar' render={() => (
                     <>
-                        <Link to={`/confirmacao/comprovante/${'BATATA'}`} className='botao primario'>Chave Pix</Link>
-                        <Link to={`/confirmacao/comprovante/${'BATATA'}`} className='botao primario'>Mercado Pago</Link>
-                        <Link to={`/confirmacao/comprovante/${'BATATA'}`} className='botao primario'>QR Code</Link>
+                        <Link to={`/confirmacao/pagamento/${'BATATA'}`} className='botao primario'>Chave Pix</Link>
+                        <Link to={`/confirmacao/pagamento/${'BATATA'}`} className='botao primario'>Mercado Pago</Link>
+                        <Link to={`/confirmacao/pagamento/${'BATATA'}`} className='botao primario'>QR Code</Link>
                     </>
                 )} />
 

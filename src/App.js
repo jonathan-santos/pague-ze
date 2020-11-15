@@ -12,6 +12,7 @@ import Finances from './pages/finances'
 import NewSpending from './pages/newSpending'
 import Start from './pages/start'
 import Confirmation from './pages/confirmation'
+import Deposit from './pages/deposit'
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
       <LoginRedirectRoute path='/contato/:id' component={Contact} />
       <LoginRedirectRoute exact path='/meu-dinheiro' component={Finances} />
       <LoginRedirectRoute exact path='/novo-gasto' component={NewSpending} />
+      <LoginRedirectRoute exact path='/depositar' component={Deposit} />
       <LoginRedirectRoute exact path='/confirmacao/cobranca' component={Confirmation} />
-      <LoginRedirectRoute exact path='/confirmacao/comprovante/:id' component={Confirmation} />
-      <Route exact path='/start' component={Start} />
+      <LoginRedirectRoute exact path='/confirmacao/pagamento/:id' component={Confirmation} />
+      <LoginRedirectRoute exact path='/confirmacao/deposito/:id' component={Confirmation} />
+      <Route exact path='/inicio' component={Start} />
       <Route exact path='/entrar' component={Login} />
       <Route exact path='/registrar' component={Register} />
     </Switch>

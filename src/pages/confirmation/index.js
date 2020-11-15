@@ -20,11 +20,27 @@ function Confirmation({ history, match }) {
         <div className='pagina-confirmacao'>
             <p className='tudo-certo'>Tudo certo</p>
 
-            <p className='mensagem'>{match.params.message}</p>
+            <Route path='/confirmacao/deposito' render={() => (
+                <p className='mensagem'>Oba! Dinheiro na conta!</p>
+            )} />
+
+            <Route path='/confirmacao/pagamento' render={() => (
+                <p className='mensagem'>Pagamento feito com sucesso!</p>
+            )} />
+
+            <Route path='/confirmacao/cobranca' render={() => (
+                <p className='mensagem'>Aguardando o pagamento...</p>
+            )} />
 
             <img className='dinheiro' src={ConfirmationImg} alt='Imagem de dinheiro' />
 
-            <Route exact path='/confirmacao/comprovante/:id' render={() => (
+            <Route exact path='/confirmacao/deposito/:id' render={() => (
+                <button className='acao' onClick={handleClickVisualizeReceipt}>
+                    Visualizar comprovante
+                </button>
+            )} />
+
+            <Route exact path='/confirmacao/pagamento/:id' render={() => (
                 <button className='acao' onClick={handleClickVisualizeReceipt}>
                     Visualizar comprovante
                 </button>

@@ -1,12 +1,12 @@
 import { Route, Redirect } from 'react-router-dom'
 
 function LoginRedirectRoute(props) {
-    const oAuthToken = localStorage.getItem('token')
+    const token = localStorage.getItem('token')
 
-    if (oAuthToken)
+    if (token)
         return <Route {...props} />
     else
-        return <Redirect to='/start' />
+        return <Redirect to='/inicio' />
 }
 
 export default LoginRedirectRoute
