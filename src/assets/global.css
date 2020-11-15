@@ -96,4 +96,12 @@ form {
     .modal {
         width: calc(400px - 3.2rem) !important;
     }
+
+    .pagina-meu-dinheiro .botao-principal {
+        width: 400px !important;
+    }
+
+    .pagina-ze .fundo {
+        width: 400px !important;
+    }
 }

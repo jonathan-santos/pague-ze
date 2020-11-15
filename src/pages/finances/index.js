@@ -21,7 +21,7 @@ function Finances({ history }) {
     }, [])
     
     return (
-        <div className='pagina-seu-dinheiro'>
+        <div className='pagina-meu-dinheiro'>
             <Header history={history} title="Meu dinheiro" goToHome alternativeStyle />
             
             <div className="secoes">
