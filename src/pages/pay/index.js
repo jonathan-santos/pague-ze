@@ -36,8 +36,7 @@ function Pay({ history }) {
             <div className="conteudo outras-opcoes">
                 <p className="titulo">Outras opções</p>
 
-                <Link to={`/confirmacao/pagamento/${'CAFÉ'}`} className='botao'>Chave pix</Link>
-                <Link to={`/confirmacao/pagamento/${'CAFÉ'}`} className='botao'>Mercado pago</Link>
+                <button className='botao disabled'>Chave pix</button>
                 <Link to={`/confirmacao/pagamento/${'CAFÉ'}`} className='botao'>QR Code</Link>
 
                 <TalkToChatbot />
