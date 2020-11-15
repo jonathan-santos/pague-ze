@@ -3,6 +3,8 @@ import { Link, useHistory } from "react-router-dom"
 
 import { getToken } from "../../repo/authRepo"
 
+import LogoImg from '../../assets/img/logo.png'
+
 import "./style.css"
 
 function Login() {
@@ -26,9 +28,11 @@ function Login() {
     return (
         <div className="pagina-autenticacao">
             <form onSubmit={handleFormSubmit}>
+                <img className='small-logo' src={LogoImg} alt='Logo do Pague Zé' />
+                
                 <h1 className="titulo">Entrar na sua conta</h1>
 
-                <div className="input">
+                <div className="input-field">
                     <label htmlFor="email">Email:</label>
 
                     <input
@@ -42,7 +46,7 @@ function Login() {
                     />
                 </div>
 
-                <div className="input">
+                <div className="input-field">
                     <label htmlFor="password">Senha:</label>
 
                     <input
@@ -55,8 +59,8 @@ function Login() {
                     />
                 </div>
 
-                <button type="submit">Entrar</button>
-
+                <button className='botao' type="submit">Entrar</button>
+                
                 <p>ou</p>
 
                 <Link to='/registrar'>Registre uma conta</Link>

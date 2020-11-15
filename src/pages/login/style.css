@@ -1,5 +1,5 @@
 .pagina-autenticacao {
-    height: 100vh;
+    min-height: 100vh;
     padding: 2.4rem 0;
     background-color: var(--cor-fundo-semi-escuro);
     display: flex;
@@ -21,31 +21,6 @@
         text-align: center;
     }
 
-    .pagina-autenticacao form label {
-        margin-bottom: 0.8rem;
-        display: block;
-        font-size: 1.8rem;
-    }
-
-    .pagina-autenticacao form input {
-        width: 100%;
-        height: 4.8rem;
-        margin-bottom: 1.2rem;
-        border: 0.4rem solid var(--cor-fundo-semi-escuro);
-        border-radius: 0.4rem;
-        padding: 0.4rem 0.8rem;
-        color: var(--cor-texto-escuro);
-    }
-
-    .pagina-autenticacao form button {
-        display: block;
-        margin: 0 auto;
-        border-radius: 1.6rem;
-        padding: 1.6rem;
-        background-color: var(--cor-principal);
-        font-size: 2.2rem;
-    }
-
     .pagina-autenticacao form p {
         margin: 1.2rem 0;
         text-align: center;
@@ -55,4 +30,11 @@
         display: block;
         color: var(--cor-texto-escuro);
         text-align: center;
+    }
+
+    .pagina-autenticacao .small-logo {
+        display: block;
+        width: 12rem;
+        height: 12rem;
+        margin: 0 auto;
     }

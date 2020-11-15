@@ -3,6 +3,8 @@ import { Link, useHistory } from "react-router-dom"
 
 import { register } from "../../repo/authRepo"
 
+import LogoImg from '../../assets/img/logo.png'
+
 import "../login/style.css"
 
 function Register() {
@@ -28,10 +30,12 @@ function Register() {
     return (
         <div className="pagina-autenticacao">
             <form onSubmit={handleFormSubmit}>
+                <img className='small-logo' src={LogoImg} alt='Logo do Pague Zé' />
+
                 <h1 className="titulo">Crie a sua conta</h1>
 
-                <div className="input">
-                    <label htmlFor="username">Nome de usuário:</label>
+                <div className="input-field">
+                    <label htmlFor="username">Seu nome:</label>
 
                     <input
                         id="username"
@@ -39,12 +43,13 @@ function Register() {
                         type="username"
                         placeholder="Seu Zé"
                         required
+                        autocomplete='off'
                         value={username} 
                         onChange={e => setUsername(e.target.value)}
                     />
                 </div>
 
-                <div className="input">
+                <div className="input-field">
                     <label htmlFor="cpf">CPF:</label>
 
                     <input
@@ -52,12 +57,15 @@ function Register() {
                         name="cpf"
                         type="cpf"
                         required
+                        autocomplete='off'
+                        minLength='11'
+                        maxLength='11'
                         value={cpf} 
                         onChange={e => setCpf(e.target.value)}
                     />
                 </div>
 
-                <div className="input">
+                <div className="input-field">
                     <label htmlFor="email">Email:</label>
 
                     <input
@@ -71,7 +79,7 @@ function Register() {
                     />
                 </div>
 
-                <div className="input">
+                <div className="input-field">
                     <label htmlFor="password">Senha:</label>
 
                     <input
@@ -79,12 +87,13 @@ function Register() {
                         name="password"
                         type="password"
                         required
+                        autocomplete="new-password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
                 </div>
 
-                <button type="submit">Criar conta</button>
+                <button className='botao' type="submit">Criar conta</button>
 
                 <p>ou</p>
 
