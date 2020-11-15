@@ -4,7 +4,7 @@ import TalkToChatbot from '../talkToChatbot'
 
 import './style.css'
 
-function Header({ history, title, alternativeStyle }) {
+function Header({ history, title, alternativeStyle, noChatbot }) {
     return (
         <header className={`header ${alternativeStyle ? 'alt' : ''}`}>
             <button className='voltar' onClick={() => history.goBack()}>
@@ -14,7 +14,7 @@ function Header({ history, title, alternativeStyle }) {
             {title && 
                 <h1 className='titulo'>{title}</h1>}
 
-            {alternativeStyle &&
+            {(alternativeStyle && !noChatbot) &&
                 <TalkToChatbot minimal />}
         </header>
     )

@@ -9,6 +9,7 @@ import Register from './pages/register'
 import Contacts from './pages/contacts'
 import Contact from './pages/contact'
 import Finances from './pages/finances'
+import NewSpending from './pages/newSpending'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <LoginRedirectRoute exact path='/contatos' component={Contacts} />
       <LoginRedirectRoute exact path='/contato/:id' component={Contact} />
       <LoginRedirectRoute exact path='/meu-dinheiro' component={Finances} />
+      <LoginRedirectRoute exact path='/novo-gasto' component={NewSpending} />
       <Route exact path='/entrar' component={Login} />
       <Route exact path='/registrar' component={Register} />
     </Switch>
