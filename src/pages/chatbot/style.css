@@ -16,6 +16,10 @@
         font-weight: normal;
     }
 
+    .pagina-ze .topo .casa {
+        margin-top: 0.4rem;
+    }
+
     .pagina-ze .topo .ze {
         width:  5rem;
         height: 5rem;
@@ -83,7 +87,7 @@
         }
         
 .pagina-ze .fundo {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 6rem;
@@ -125,6 +129,6 @@
             }
 
         .pagina-ze .fundo button .seta {
-            transform: rotate(-90deg);
+            transform: rotate(270deg);
         }
 

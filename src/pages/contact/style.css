@@ -49,5 +49,6 @@
 
 .pagina-contato .botao.secundario {
     border: 0.3rem solid var(--cor-principal);
+    background-color: transparent;
     color: var(--cor-principal);
 }

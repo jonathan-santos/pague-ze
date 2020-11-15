@@ -20,10 +20,13 @@
 
 .pagina-start .botao.primario {
     margin-top: 4.8rem;
+    margin-bottom: 0.8rem;
     background-color: var(--cor-principal);
     color: var(--cor-texto-claro);
 }
 
 .pagina-start .botao.secundario {
+    margin-top: 0;
+    background-color: transparent;
     color: var(--cor-texto-escuro);
 }

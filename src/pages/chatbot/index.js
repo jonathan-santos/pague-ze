@@ -5,7 +5,7 @@ import { getChatbotAnswer } from '../../repo/chatbotRepo'
 
 import HouseImg from '../../assets/img/house.svg'
 import ZeImg from '../../assets/img/ze.jpg'
-import ArrowImg from '../../assets/img/arrow.svg'
+import ExpandArrowImg from '../../assets/img/expandArrow.svg'
 
 import './style.css'
 
@@ -57,7 +57,7 @@ function Chatbot() {
     return (
         <div className='pagina-ze'>
             <div className="topo">
-                <Link to='/'>
+                <Link to='/' className='casa'>
                     <img src={HouseImg} alt='Símbolo de casa' />
                 </Link>
 
@@ -86,7 +86,7 @@ function Chatbot() {
                 />
 
                 <button type='submit'>
-                    <img className='seta' src={ArrowImg} alt='seta' />
+                    <img className='seta' src={ExpandArrowImg} alt='seta' />
                 </button>
             </form>
         </div>

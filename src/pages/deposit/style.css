@@ -19,24 +19,6 @@
     font-weight: 600;
 }
 
-.pagina-depositar .conteudo .botao {
-    display: block;
-    width: 100%;
-    margin-bottom: 1.6rem;
-    padding: 1.6rem;
-    border-radius: 0.8rem;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
-}
-
-    .pagina-depositar .conteudo .botao.disabled {
-        background-color: #999;
-    }
-
-.pagina-depositar .modal {
-    
+.pagina-depositar .botao {
+    margin-top: 0;
 }

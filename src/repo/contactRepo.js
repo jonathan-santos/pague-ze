@@ -4,7 +4,7 @@ const contacts = [
     { id: 2, name: 'Sebastião Junior', description: 'Hope it will work in the week...', photo:'https://randomuser.me/api/portraits/men/15.jpg' },
     { id: 3, name: 'Julieta Sampaio', description: 'Thank you! It really shine with...', photo:'https://randomuser.me/api/portraits/women/51.jpg' },
     { id: 4, name: 'Roberval', description: 'Yes I know', photo:'https://randomuser.me/api/portraits/men/5.jpg' },
-    { id: 5, name: 'Irinaldo Freire', description: 'It will be online in 2 days', photo:'' },
+    { id: 5, name: 'Irinaldo Freire', description: 'It will be online in 2 days', photo:'https://randomuser.me/api/portraits/men/42.jpg' },
     { id: 6, name: 'Johnny Cooper', description: 'Of course', photo:'https://randomuser.me/api/portraits/men/32.jpg' },
 ]
 

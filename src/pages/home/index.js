@@ -77,6 +77,10 @@ function Home() {
                     </Link>
                 </div>
 
+                <Link to='/contatos' className='botao primario'>
+                    Contatos
+                </Link>
+
                 <Link to='/meu-dinheiro' className='botao primario'>
                     Meu dinheiro
                 </Link>

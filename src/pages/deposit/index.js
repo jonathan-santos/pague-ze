@@ -1,29 +1,49 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-import { getLotericaCode } from '../../repo/depositRepo'
+import { getLotericaCode, getBoletoCode } from '../../repo/depositRepo'
 
 import Header from '../../components/header'
-import TalkToChatbot from '../../components/talkToChatbot'
 import Modal from '../../components/modal'
+import TalkToChatbot from '../../components/talkToChatbot'
 
 import './style.css'
 
 function Deposit({ history }) {
-    const handleClickCasasLotericas = async () => {
+    const [depositValue, setDepositeValue] = useState(0)
+    const [actionDesired, setActionDesired] = useState('')
+    const [modalDepositValueOpen, setModalDepositValueOpen] = useState(false)
+
+    const handleClickDepositOption = (optionName) => {
+        setModalDepositValueOpen(true)
+        setActionDesired(optionName)
+    }
+
+    const handleModalDepositValueFormSubmit = e => {
+        e.preventDefault()
+
+        setModalDepositValueOpen(false)
+
+        if (actionDesired === 'casas-lotericas')
+            doCasasLotericasAction()
+        else if (actionDesired === 'boleto')
+            doBoletoAction()
+    }
+
+    const doCasasLotericasAction = async () => {
         try {
-            const res = await getLotericaCode(5)
-            console.log(`res: ${res}`)
-            history.push(`/confirmacao/deposito/${'1'}`)
+            const res = await getLotericaCode(depositValue)
+            // history.push(`/confirmacao/deposito/${'1'}`)
         } catch (error) {
             alert('Não foi possível fazer o depósito na lotérica \nTente novamente')
         }
     }
 
-    const handleClickBoleto = async () => {
+    const doBoletoAction = async () => {
         try {
-            history.push(`/confirmacao/deposito/${'1'}`)
+            const res = await getBoletoCode(depositValue)
+            // history.push(`/confirmacao/deposito/${'1'}`)
         } catch (error) {
-            alert('Não foi possível fazer o depósito na lotérica \nTente novamente')
+            alert('Não foi possível fazer o depósito com boleto \nTente novamente')
         }
     }
     
@@ -38,13 +58,33 @@ function Deposit({ history }) {
 
                 <button className='botao disabled'>Chave Pix</button>
 
-                <button onClick={handleClickCasasLotericas} className='botao'>Casas lotéricas</button>
+                <button onClick={() => handleClickDepositOption('casas-lotericas')} className='botao'>Casas lotéricas</button>
 
-                <button onClick={handleClickBoleto} className='botao'>Boleto</button>
+                <button onClick={() => handleClickDepositOption('boleto')} className='botao'>Boleto</button>
 
                 <TalkToChatbot />
 
-                <Modal />
+                <Modal title="Quanto quer depositar?" isOpen={modalDepositValueOpen} handleCloseModal={() => setModalDepositValueOpen(false)}>
+                    <form onSubmit={handleModalDepositValueFormSubmit}>
+                        <div className="input-field">
+                            <label htmlFor='depositvalue'>Valor (R$):</label>
+
+                            <input
+                                id='depositvalue'
+                                name='depositvalue'
+                                type='number'
+                                min="0.01"
+                                step="0.01"
+                                max="9999999"
+                                value={depositValue}
+                                onChange={e => setDepositeValue(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <button type='submit' className='botao'>Continuar</button>
+                    </form>
+                </Modal>
             </div>
         </div>
     )

@@ -72,7 +72,7 @@ function Register() {
                 </div>
 
                 <div className="input">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Senha:</label>
 
                     <input
                         id="password"
