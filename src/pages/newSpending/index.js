@@ -9,6 +9,7 @@ function NewSpending({ history }) {
     const [date, setDate] = useState(undefined)
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
+    const [type, setType] = useState(0)
     
     const handleFormSubmit = e => {
         e.preventDefault()
@@ -46,6 +47,37 @@ function NewSpending({ history }) {
                         onChange={e => setValue(e.target.value)}
                         required
                     />
+
+                    <label htmlFor='type'>Tipo:</label>
+
+                    <div className="checkboxes">
+                        <label>
+                            <input
+                                id='type'
+                                name='type'
+                                type='checkbox'
+                                checked={type === 0}
+                                onChange={e => setType(0)}
+                                required
+                            />
+
+                            <span>Recebi</span>
+                        </label>
+
+                        <label>
+                            <input
+                                id='type'
+                                name='type'
+                                type='checkbox'
+                                checked={type === 1}
+                                onChange={e => setType(1)}
+                                required
+                            />
+                            
+                            <span>Paguei</span>
+                        </label>
+                    </div>
+
 
                     <label htmlFor='date'>Descrição:</label>
 
