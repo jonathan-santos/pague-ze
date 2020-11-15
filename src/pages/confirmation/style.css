@@ -1,0 +1,47 @@
+.pagina-confirmacao {
+    height: 100vh;
+    padding: 1.6rem;
+    overflow: hidden;
+    background-color: var(--cor-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagina-confirmacao .tudo-certo {
+    margin-top: 6rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.pagina-confirmacao .mensagem {
+    margin-top: 3rem;
+}
+
+.pagina-confirmacao .dinheiro {
+    width: 70%;
+    margin: 4rem 0;
+}
+
+.pagina-confirmacao .acao {
+    border-radius: 3rem;
+    padding: 1.6rem;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-principal);
+    font-weight: 600;
+}
+
+.pagina-confirmacao .voltar {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .pagina-confirmacao .voltar img {
+        height: 2rem;
+        margin-right: 0.8rem;
+    }
