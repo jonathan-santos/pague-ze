@@ -19,6 +19,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    color: var(--cor-principal);
 }
 
     .header img {

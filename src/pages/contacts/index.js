@@ -28,7 +28,7 @@ function Contacts({ history }) {
                     <img className='foto' src={contact.photo} alt={`Foto de ${contact.name.first} ${contact.name.last}`}/>
 
                     <div className="informacoes">
-                        <p className='nome'>{`${contact.name.first} ${contact.name}`}</p>
+                        <p className='nome'>{contact.name}</p>
 
                         <p className='descricao'>{contact.description}</p>
                     </div>
