@@ -80,3 +80,20 @@ form {
 .botao.disabled {
     background-color: #999;
 }
+
+@media (min-width: 800px) {
+    body {
+        background-color: #EEE;
+    }
+
+    #root {
+        display: relative;
+        background-color: var(--cor-fundo-claro);
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    .modal {
+        width: calc(400px - 3.2rem) !important;
+    }
+}
