@@ -5,10 +5,10 @@ import TalkToChatbot from '../../components/talkToChatbot'
 
 import './style.css'
 
-function Deposit() {
+function Deposit({ history }) {
     return (
         <div className='pagina-depositar'>
-            <Header />
+            <Header history={history} />
 
             <div className="conteudo">
                 <p className='titulo'>Adicionar dinheiro</p>

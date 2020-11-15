@@ -8,6 +8,7 @@ import "../login/style.css"
 function Register() {
     const history = useHistory()
     const [username, setUsername] = useState("")
+    const [cpf, setCpf] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -15,7 +16,7 @@ function Register() {
         e.preventDefault()
 
         try {
-            const token = await register(username, email, password)
+            const token = await register(username, cpf, email, password)
             localStorage.setItem("token", token)
             history.push("/")
         } catch (error) {
@@ -40,6 +41,19 @@ function Register() {
                         required
                         value={username} 
                         onChange={e => setUsername(e.target.value)}
+                    />
+                </div>
+
+                <div className="input">
+                    <label htmlFor="cpf">CPF:</label>
+
+                    <input
+                        id="cpf"
+                        name="cpf"
+                        type="cpf"
+                        required
+                        value={cpf} 
+                        onChange={e => setCpf(e.target.value)}
                     />
                 </div>
 

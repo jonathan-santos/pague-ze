@@ -19,7 +19,7 @@ const getToken = async (email, password) => {
     return answer.access_token
 }
 
-const register = async (username, email, password) => {
+const register = async (username, cpf, email, password) => {
     const res = await fetch(`${endpoint}/users/register`, {
         method: 'POST',
         headers: {
@@ -28,7 +28,8 @@ const register = async (username, email, password) => {
         body: JSON.stringify({
             username,
             email,
-            password
+            password,
+            identity: cpf
         })
     })
 
