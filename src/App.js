@@ -13,6 +13,7 @@ import NewSpending from './pages/newSpending'
 import Start from './pages/start'
 import Confirmation from './pages/confirmation'
 import Deposit from './pages/deposit'
+import Pay from './pages/pay'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <LoginRedirectRoute path='/contato/:id' component={Contact} />
       <LoginRedirectRoute exact path='/meu-dinheiro' component={Finances} />
       <LoginRedirectRoute exact path='/novo-gasto' component={NewSpending} />
+      <LoginRedirectRoute exact path='/pagar' component={Pay} />
       <LoginRedirectRoute exact path='/depositar' component={Deposit} />
       <LoginRedirectRoute exact path='/confirmacao/cobranca' component={Confirmation} />
       <LoginRedirectRoute exact path='/confirmacao/pagamento/:id' component={Confirmation} />
