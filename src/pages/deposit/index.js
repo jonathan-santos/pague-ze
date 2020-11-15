@@ -1,11 +1,32 @@
 import { Link } from 'react-router-dom'
 
+import { getLotericaCode } from '../../repo/depositRepo'
+
 import Header from '../../components/header'
 import TalkToChatbot from '../../components/talkToChatbot'
+import Modal from '../../components/modal'
 
 import './style.css'
 
 function Deposit({ history }) {
+    const handleClickCasasLotericas = async () => {
+        try {
+            const res = await getLotericaCode(5)
+            console.log(`res: ${res}`)
+            history.push(`/confirmacao/deposito/${'1'}`)
+        } catch (error) {
+            alert('Não foi possível fazer o depósito na lotérica \nTente novamente')
+        }
+    }
+
+    const handleClickBoleto = async () => {
+        try {
+            history.push(`/confirmacao/deposito/${'1'}`)
+        } catch (error) {
+            alert('Não foi possível fazer o depósito na lotérica \nTente novamente')
+        }
+    }
+    
     return (
         <div className='pagina-depositar'>
             <Header history={history} />
@@ -15,13 +36,15 @@ function Deposit({ history }) {
 
                 <p className='subtitulo'>Escolha uma opção: </p>
 
-                <Link to={`/confirmacao/deposito/${'MANDIOCA'}`} className='botao'>Chave Pix</Link>
+                <button className='botao disabled'>Chave Pix</button>
 
-                <Link to={`/confirmacao/deposito/${'MANDIOCA'}`} className='botao'>Casas lotéricas</Link>
+                <button onClick={handleClickCasasLotericas} className='botao'>Casas lotéricas</button>
 
-                <Link to={`/confirmacao/deposito/${'MANDIOCA'}`} className='botao'>Boleto</Link>
+                <button onClick={handleClickBoleto} className='botao'>Boleto</button>
 
                 <TalkToChatbot />
+
+                <Modal />
             </div>
         </div>
     )

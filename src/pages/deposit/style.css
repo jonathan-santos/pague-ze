@@ -32,3 +32,11 @@
     background-color: var(--cor-principal);
     color: var(--cor-texto-claro);
 }
+
+    .pagina-depositar .conteudo .botao.disabled {
+        background-color: #999;
+    }
+
+.pagina-depositar .modal {
+    
+}

@@ -62,9 +62,9 @@ function Home() {
                 <div className='boletos'>
                     <h2 className="titulo">Meus boletos</h2>
 
-                    <button className='botao-expandir'>
+                    {/* <button className='botao-expandir'>
                         <img src={ExpandArrowImg} alt='Ícone de seta' />
-                    </button>
+                    </button> */}
                 </div>
 
                 <div className="pagamento">
@@ -77,8 +77,8 @@ function Home() {
                     </Link>
                 </div>
 
-                <Link to='/novo-gasto' className='botao primario'>
-                    Cadastrar novo gasto
+                <Link to='/meu-dinheiro' className='botao primario'>
+                    Meu dinheiro
                 </Link>
 
                 <TalkToChatbot />

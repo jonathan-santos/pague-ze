@@ -9,7 +9,7 @@ function Confirmation({ history, match }) {
     const { id } = useParams()
 
     const handleClickVisualizeReceipt = () => {
-        alert(`Comprovante: \n${id}`)
+        // alert(`Comprovante: \n${id}`)
     }
 
     const handleClickDoAnotherCharge = () => {

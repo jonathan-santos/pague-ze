@@ -9,7 +9,7 @@ const financialState = [
             { name: 'Eduardo Feijó', value: 900 },
         ]
     },{
-        name: 'Recebimentos',
+        name: 'Recebi',
         value: 1354,
         details: [
             { name: 'Eduardo Feijó', value: 120 },
@@ -18,25 +18,7 @@ const financialState = [
             { name: 'Eduardo Feijó', value: 900 },
         ]
     },{
-        name: 'Vendas',
-        value: 3354,
-        details: [
-            { name: 'Eduardo Feijó', value: 120 },
-            { name: 'Eduardo Feijó', value: 432 },
-            { name: 'Eduardo Feijó', value: 76 },
-            { name: 'Eduardo Feijó', value: 900 },
-        ]
-    },{
-        name: 'Transferências',
-        value: -1648,
-        details: [
-            { name: 'Eduardo Feijó', value: 120 },
-            { name: 'Eduardo Feijó', value: 432 },
-            { name: 'Eduardo Feijó', value: 76 },
-            { name: 'Eduardo Feijó', value: 900 },
-        ]
-    },{
-        name: 'Pagamentos',
+        name: 'Paguei',
         value: -1373,
         details: [
             { name: 'Eduardo Feijó', value: 120 },
