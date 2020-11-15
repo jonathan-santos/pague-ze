@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Route, useParams } from 'react-router-dom'
 
 import ConfirmationImg from '../../assets/img/confirmation.png'
 import HouseImg from '../../assets/img/house.svg'
@@ -6,24 +6,16 @@ import HouseImg from '../../assets/img/house.svg'
 import './style.css'
 
 function Confirmation({ history, match }) {
-    let action = { }
+    const { id } = useParams()
 
-    if (match.params.comprovante) {
-        action = {
-            name: 'Visualizar comprovante',
-            clickHandler: () => {
-                alert('Visualizando comprovante')
-            }
-        }
-    } else if (match.params.cobranca) {
-        action = {
-            name: 'Fazer outra cobrança',
-            clickHandler: () => {
-                history.push('/cobrar')
-            }
-        }
+    const handleClickVisualizeReceipt = () => {
+        alert(`Comprovante: \n${id}`)
     }
-    
+
+    const handleClickDoAnotherCharge = () => {
+        history.push('/contatos')
+    }
+
     return (
         <div className='pagina-confirmacao'>
             <p className='tudo-certo'>Tudo certo</p>
@@ -32,9 +24,18 @@ function Confirmation({ history, match }) {
 
             <img className='dinheiro' src={ConfirmationImg} alt='Imagem de dinheiro' />
 
-            <button className='acao' onClick={action.clickHandler}>
-                {action.name}
-            </button>
+            <Route exact path='/confirmacao/comprovante/:id' render={() => (
+                <button className='acao' onClick={handleClickVisualizeReceipt}>
+                    Visualizar comprovante
+                </button>
+            )} />
+
+            <Route exact path='/confirmacao/cobranca' render={() => (
+                <button className='acao' onClick={handleClickDoAnotherCharge}>
+                    Fazer outra cobrança
+                </button>
+            )} />
+
 
             <Link to='/' className='voltar'>
                 <img src={HouseImg} alt='Ícone de casa' /> Voltar ao início
