@@ -1,9 +1,14 @@
-import { endpoint, authHeader } from './base'
+import { endpoint } from './base'
 
 const checkToken = async () => {
+    const token = localStorage.getItem('token')
+
+    if (!token)
+        console.log('Token vazio')
+
     const { ok } = await fetch(`${endpoint}/token`, {
         headers: {
-            ...authHeader
+            'authorization': `Bearer ${token}`
         }
     })
 
