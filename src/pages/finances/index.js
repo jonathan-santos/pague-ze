@@ -30,9 +30,11 @@ function Finances({ history }) {
                         <input type="checkbox" id={financialData.name} />
 
                         <label htmlFor={financialData.name} className="expandir">
-                            <p className="titulo">{financialData.name}</p>
+                            <p className={`titulo ${i === 0 ? 'principal' : ''}`}>{financialData.name}</p>
                             <p className={`valor ${i === 0 ? 'principal' : ''}`}>R$ {financialData.value}</p>
-                            <img className='seta' src={ArrowImg} alt='seta' />
+
+                            {financialData.details.length > 0 &&
+                                <img className='seta' src={ArrowImg} alt='seta' />}
                         </label>
 
                         <div className="detalhes">

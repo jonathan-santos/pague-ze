@@ -1,13 +1,10 @@
+import { endpoint } from './base'
+
 const financialState = [
     {
-        name: 'Meu dinheiro',
+        name: 'Tenho',
         value: 7729,
-        details: [
-            { name: 'Eduardo Feijó', value: 120 },
-            { name: 'Eduardo Feijó', value: 432 },
-            { name: 'Eduardo Feijó', value: 76 },
-            { name: 'Eduardo Feijó', value: 900 },
-        ]
+        details: []
     },{
         name: 'Recebi',
         value: 1354,

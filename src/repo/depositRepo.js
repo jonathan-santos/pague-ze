@@ -1,7 +1,7 @@
-const endpoint = "https://pague-ze.herokuapp.com/payments"
+import { endpoint } from './base'
 
 const getLotericaCode = async (value) => {
-    const res = await fetch(`${endpoint}/loterica`, {
+    const res = await fetch(`${endpoint}/payments/loterica`, {
         method: 'POST',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -20,7 +20,7 @@ const getLotericaCode = async (value) => {
 }
 
 const getBoletoCode = async (value) => {
-    const res = await fetch(`${endpoint}/boleto`, {
+    const res = await fetch(`${endpoint}/payments/boleto`, {
         method: 'POST',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('token')}`,

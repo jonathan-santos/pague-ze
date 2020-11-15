@@ -1,3 +1,5 @@
+import { endpoint } from './base'
+
 const contacts = [
     { id: 0, name: 'Alenildo Lopes', description: 'Roupas e Calçados', photo:'https://randomuser.me/api/portraits/men/49.jpg' },
     { id: 1, name: 'Antonieta Cailá', description: 'Doces e Salgados', photo:'https://randomuser.me/api/portraits/women/23.jpg' },

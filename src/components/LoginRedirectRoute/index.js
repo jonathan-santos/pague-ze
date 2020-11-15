@@ -1,9 +1,17 @@
+import { useEffect } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-function LoginRedirectRoute(props) {
-    const token = localStorage.getItem('token')
+import { checkToken } from '../../repo/authRepo'
 
-    if (token)
+function LoginRedirectRoute(props) {
+    useEffect(() => {
+        checkToken().then(res => {
+            if (!res)
+                localStorage.setItem('token', '')
+        })
+    }, [])
+
+    if (localStorage.getItem('token'))
         return <Route {...props} />
     else
         return <Redirect to='/inicio' />

@@ -1,4 +1,14 @@
-const endpoint = 'https://pague-ze.herokuapp.com'
+import { endpoint, authHeader } from './base'
+
+const checkToken = async () => {
+    const { ok } = await fetch(`${endpoint}/token`, {
+        headers: {
+            ...authHeader
+        }
+    })
+
+    return ok
+}
 
 const getToken = async (email, password) => {
     const res = await fetch(`${endpoint}/auth/login`, {
@@ -41,6 +51,7 @@ const register = async (username, cpf, email, password) => {
 }
 
 export {
+    checkToken,
     getToken,
     register
 }

@@ -1,7 +1,7 @@
-const endpoint = 'https://pague-ze.herokuapp.com/chatbot'
+import { endpoint } from './base'
 
 const getChatbotAnswer = async (message) => {
-    const res = await fetch(`${endpoint}/messages`, {
+    const res = await fetch(`${endpoint}/chatbot/messages`, {
         method: 'POST',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('token')}`,

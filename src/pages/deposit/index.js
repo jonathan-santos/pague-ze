@@ -12,6 +12,7 @@ function Deposit({ history }) {
     const [depositValue, setDepositeValue] = useState(0)
     const [actionDesired, setActionDesired] = useState('')
     const [modalDepositValueOpen, setModalDepositValueOpen] = useState(false)
+    const [modalInstructionsOpen, setModalInstructionsOpen] = useState(false)
 
     const handleClickDepositOption = (optionName) => {
         setModalDepositValueOpen(true)
@@ -85,6 +86,10 @@ function Deposit({ history }) {
                         <button type='submit' className='botao'>Continuar</button>
                     </form>
                 </Modal>
+
+                {/* <Modal isOpen='modalInstructionsOpen'>
+
+                </Modal> */}
             </div>
         </div>
     )
