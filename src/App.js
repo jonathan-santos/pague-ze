@@ -10,6 +10,7 @@ import Contacts from './pages/contacts'
 import Contact from './pages/contact'
 import Finances from './pages/finances'
 import NewSpending from './pages/newSpending'
+import Start from './pages/start'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <LoginRedirectRoute exact path='/contato/:id' component={Contact} />
       <LoginRedirectRoute exact path='/meu-dinheiro' component={Finances} />
       <LoginRedirectRoute exact path='/novo-gasto' component={NewSpending} />
+      <Route exact path='/start' component={Start} />
       <Route exact path='/entrar' component={Login} />
       <Route exact path='/registrar' component={Register} />
     </Switch>
