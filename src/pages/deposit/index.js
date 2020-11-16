@@ -99,11 +99,11 @@ function Deposit({ history }) {
 
                 <Modal title="O que você deve fazer agora?" isOpen={modalInstructionsOpen} handleCloseModal={handleCloseModalInstructions}>
                     {actionDesired === 'casas-lotericas' && <>
-                        <p style={{ textAlign: 'center' }}>Apresente esse código na lotérica: {resultCode} <br/>Junto do seu CPF: {cpf}</p>
+                        <p style={{ textAlign: 'center' }}>Apresente esse código na lotérica: <br /> {resultCode} <br/><br />Junto do seu CPF: <br />{cpf}</p>
                     </>}
 
                     {actionDesired === 'boleto' && <>
-                        <p style={{ textAlign: 'center' }}>Agora é só pagar o boleto: {resultCode}</p>
+                        <p style={{ textAlign: 'center' }}>Agora é só pagar o boleto: <br />{resultCode}</p>
                     </>}
                 </Modal>
             </div>
