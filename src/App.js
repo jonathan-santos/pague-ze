@@ -28,7 +28,7 @@ function App() {
       <LoginRedirectRoute exact path='/depositar' component={Deposit} />
       <LoginRedirectRoute exact path='/confirmacao/cobranca' component={Confirmation} />
       <LoginRedirectRoute exact path='/confirmacao/pagamento/:id' component={Confirmation} />
-      <LoginRedirectRoute exact path='/confirmacao/deposito/:id' component={Confirmation} />
+      <LoginRedirectRoute exact path='/confirmacao/deposito' component={Confirmation} />
       <Route exact path='/inicio' component={Start} />
       <Route exact path='/entrar' component={Login} />
       <Route exact path='/registrar' component={Register} />

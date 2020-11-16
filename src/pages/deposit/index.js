@@ -11,6 +11,8 @@ import './style.css'
 function Deposit({ history }) {
     const [depositValue, setDepositeValue] = useState(0)
     const [actionDesired, setActionDesired] = useState('')
+    const [resultCode, setResultCode] = useState('')
+    const [cpf, setCpf] = useState('')
     const [modalDepositValueOpen, setModalDepositValueOpen] = useState(false)
     const [modalInstructionsOpen, setModalInstructionsOpen] = useState(false)
 
@@ -33,7 +35,9 @@ function Deposit({ history }) {
     const doCasasLotericasAction = async () => {
         try {
             const res = await getLotericaCode(depositValue)
-            // history.push(`/confirmacao/deposito/${'1'}`)
+            setResultCode(res.code)
+            setCpf(res.identity)
+            setModalInstructionsOpen(true)
         } catch (error) {
             alert('Não foi possível fazer o depósito na lotérica \nTente novamente')
         }
@@ -42,10 +46,16 @@ function Deposit({ history }) {
     const doBoletoAction = async () => {
         try {
             const res = await getBoletoCode(depositValue)
-            // history.push(`/confirmacao/deposito/${'1'}`)
+            setResultCode(res.code)
+            setCpf(res.identity)
+            setModalInstructionsOpen(true)
         } catch (error) {
             alert('Não foi possível fazer o depósito com boleto \nTente novamente')
         }
+    }
+
+    const handleCloseModalInstructions = () => {
+        history.push('/confirmacao/deposito')
     }
     
     return (
@@ -87,9 +97,15 @@ function Deposit({ history }) {
                     </form>
                 </Modal>
 
-                {/* <Modal isOpen='modalInstructionsOpen'>
+                <Modal title="O que você deve fazer agora?" isOpen={modalInstructionsOpen} handleCloseModal={handleCloseModalInstructions}>
+                    {actionDesired === 'casas-lotericas' && <>
+                        <p style={{ textAlign: 'center' }}>Apresente esse código na lotérica: {resultCode} <br/>Junto do seu CPF: {cpf}</p>
+                    </>}
 
-                </Modal> */}
+                    {actionDesired === 'boleto' && <>
+                        <p style={{ textAlign: 'center' }}>Agora é só pagar o boleto: {resultCode}</p>
+                    </>}
+                </Modal>
             </div>
         </div>
     )

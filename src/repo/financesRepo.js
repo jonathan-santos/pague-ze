@@ -1,32 +1,26 @@
-import { endpoint } from './base'
-
 const financialState = [
     {
-        name: 'Tenho',
-        value: 7729,
-        details: []
-    },{
         name: 'Recebi',
-        value: 1354,
+        value: 300,
         details: [
-            { name: 'Eduardo Feijó', value: 120 },
-            { name: 'Eduardo Feijó', value: 432 },
-            { name: 'Eduardo Feijó', value: 76 },
-            { name: 'Eduardo Feijó', value: 900 },
+            { name: 'Alenildo Lopes', value: 78 },
+            { name: 'Sebastião Junior', value: 80 },
+            { name: 'Antonieta Cailá', value: 50 },
+            { name: 'Irinaldo Freire', value: 92 },
         ]
     },{
         name: 'Paguei',
-        value: -1373,
+        value: -243,
         details: [
-            { name: 'Eduardo Feijó', value: 120 },
-            { name: 'Eduardo Feijó', value: 432 },
-            { name: 'Eduardo Feijó', value: 76 },
-            { name: 'Eduardo Feijó', value: 900 },
+            { name: 'Supermercado do bairro', value: 150 },
+            { name: 'Salão do Zé', value: 20 },
+            { name: 'Buteco da Juliane', value: 76 },
+            { name: 'Padoca estrela', value: 15 },
         ]
     },
 ]
 
-const getFinancialState = () => {
+const getFinancialState = async () => {
     return new Promise(resolve => {
         resolve(financialState)
     }, reject => {}) 

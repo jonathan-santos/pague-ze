@@ -25,13 +25,20 @@ function Finances({ history }) {
             <Header history={history} title="Meu dinheiro" goToHome alternativeStyle />
             
             <div className="secoes">
+                <div className="secao">
+                    <div className="expandir">
+                        <p className='titulo principal'>Meu dinheiro</p>
+                        <p className='valor principal'>R$ {localStorage.getItem('tenho')}</p>
+                    </div>
+                </div>
+
                 {financialState.map((financialData, i) => (
                     <div className="secao" key={i}>
                         <input type="checkbox" id={financialData.name} />
 
                         <label htmlFor={financialData.name} className="expandir">
-                            <p className={`titulo ${i === 0 ? 'principal' : ''}`}>{financialData.name}</p>
-                            <p className={`valor ${i === 0 ? 'principal' : ''}`}>R$ {financialData.value}</p>
+                            <p className='titulo'>{financialData.name}</p>
+                            <p className='valor'>R$ {financialData.value}</p>
 
                             {financialData.details.length > 0 &&
                                 <img className='seta' src={ArrowImg} alt='seta' />}

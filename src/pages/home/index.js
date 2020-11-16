@@ -21,6 +21,7 @@ function Home({ history }) {
     useEffect(() => {
         getProfile().then(res => {
             setUsername(res.username)
+            localStorage.setItem('tenho', res.account.balance)
             setFinancialState({
                 ...financialState,
                 money: res.account.balance

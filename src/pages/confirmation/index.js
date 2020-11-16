@@ -34,12 +34,6 @@ function Confirmation({ history, match }) {
 
             <img className='dinheiro' src={ConfirmationImg} alt='Imagem de dinheiro' />
 
-            <Route exact path='/confirmacao/deposito/:id' render={() => (
-                <button className='acao' onClick={handleClickVisualizeReceipt}>
-                    Visualizar comprovante
-                </button>
-            )} />
-
             <Route exact path='/confirmacao/pagamento/:id' render={() => (
                 <button className='acao' onClick={handleClickVisualizeReceipt}>
                     Visualizar comprovante
