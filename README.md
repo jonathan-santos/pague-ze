@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pague Zé
+Projeto para o [Megahack 5.0](https://megahack.com.br/)
 
 ## Available Scripts
 
