@@ -13,7 +13,6 @@ function NewSpending({ history }) {
     
     const handleFormSubmit = e => {
         e.preventDefault()
-        console.log('SUBMIT')
         history.goBack()
     }
 
@@ -39,7 +38,7 @@ function NewSpending({ history }) {
                     <input
                         id='value'
                         name='value'
-                        type='value'
+                        type='number'
                         min="0.01"
                         step="0.01"
                         max="9999999"
@@ -58,7 +57,6 @@ function NewSpending({ history }) {
                                 type='checkbox'
                                 checked={type === 0}
                                 onChange={e => setType(0)}
-                                required
                             />
 
                             <span>Recebi</span>
@@ -71,7 +69,6 @@ function NewSpending({ history }) {
                                 type='checkbox'
                                 checked={type === 1}
                                 onChange={e => setType(1)}
-                                required
                             />
                             
                             <span>Paguei</span>

@@ -44,7 +44,7 @@ function Home({ history }) {
         <div className='pagina-home'>
             <div className="topo">
                 <div className="conta">
-                    <p className='saudacao'>Bom dia, {username}!</p>
+                    <p className='saudacao'>Oi, {username}!</p>
 
                     <button className="botao-sair" onClick={handleClickSair}>
                         Sair
